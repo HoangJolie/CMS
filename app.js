@@ -6,8 +6,11 @@ var logger = require('morgan');
 
 // Import sequelize as databáse
 const databse = require('./database/models/index');
+
+// Import routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const adminRouter = require('./routes/admin_router');
 
 var app = express();
 
@@ -23,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
