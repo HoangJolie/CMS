@@ -12,13 +12,13 @@
     <title>CMS</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -46,21 +46,32 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Create Training Staff</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Update Training Staff</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/admin/add_trainingstaff">
+                            <form method="POST" action="/admin/edit_trainingstaff">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">ID</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                      name="id"
+                                      value="<%= trainingStaff.id %>"
+                                      readonly
+                                    >
+                                  </div>
+                                
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Username</label>
                                   <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username"
                                     name="username"
+                                    value="<%= trainingStaff.username %>"
                                   >
                                 </div>
                                 
                                 <div class="form-group">
                                   <label for="exampleInputPassword1">Password</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter password"
                                     name="password"
+                                    value="<%= trainingStaff.password %>"
                                   >
                                 </div>
                                 
@@ -87,21 +98,21 @@
     <%- include('../layouts/logout_modal') %>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+    <script src="../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../js/demo/datatables-demo.js"></script>
+    <script src="../../js/demo/datatables-demo.js"></script>
 
 </body>
 
