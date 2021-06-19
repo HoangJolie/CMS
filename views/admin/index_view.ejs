@@ -43,8 +43,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <div class="card shadow mb-4">
+                    <!-- Begin Training Staff section -->
+                    <div class="card shadow mb-4" id="trainingStaff">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Training Staff</h6>
                         </div>
@@ -89,7 +89,57 @@
                                 </table>
                             </div>
                         </div>
-                    </div>                                                            
+                    </div>
+                    <!-- End Training Staff section -->
+                    
+                    <!-- Begin Trainer section -->
+                    <div class="card shadow mb-4" id="trainer">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Trainer</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <a href="/admin/create_trainer">
+                                    <button type="button" class="btn btn-success">Add Trainer</button>
+                                </a>
+                                <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>Created at</th>
+                                            <th>Updated at</th>
+                                            <th>Update</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>                                   
+                                    <tbody>
+                                        <% trainers.forEach(function(trainer) { %>
+                                            <tr>
+                                              <th scope="row"><%= trainer.dataValues.id %></th>
+                                              <td><%= trainer.dataValues.username %></td>
+                                              <td><%= trainer.dataValues.password %></td>
+                                              <td><%= trainer.dataValues.createdAt %></td>
+                                              <td><%= trainer.dataValues.updatedAt %></td>
+                                              <td>
+                                                <a href="/admin/update_trainer/<%= trainer.dataValues.id %>">
+                                                  <button type="button" class="btn btn-warning">Update</button>
+                                                </a>
+                                              </td>
+                                              <td>
+                                                <a href="/admin/delete_trainer/<%= trainer.dataValues.id %>">
+                                                  <button type="button" class="btn btn-danger">Delete</button>
+                                                </a>
+                                              </td>
+                                            </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Trainer section -->
                 </div>
                 <!-- /.container-fluid -->
 
